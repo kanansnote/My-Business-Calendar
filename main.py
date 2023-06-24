@@ -1,5 +1,6 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QCalendarWidget, QLabel, QLineEdit
+from PyQt5.QtCore import QDate
+from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QCalendarWidget
 
 
 class MainWindow(QMainWindow):
@@ -18,23 +19,17 @@ class MainWindow(QMainWindow):
         # Create a calendar widget and add it to the layout
         calendar = QCalendarWidget()
         calendar.setGridVisible(True)
-        calendar.setMinimumDate(calendar.minimumDate().addMonths(-1))  # Show previous month
-        calendar.setMaximumDate(calendar.maximumDate().addMonths(1))  # Show next month
+
+        # Set the minimum and maximum dates to display only June 2020 and July 2020
+        min_date = QDate(2020, 6, 1)
+        max_date = QDate(2020, 7, 31)
+        calendar.setMinimumDate(min_date)
+        calendar.setMaximumDate(max_date)
+
+        # Set the initial selected date to June 1, 2020
+        calendar.setSelectedDate(min_date)
+
         layout.addWidget(calendar)
-
-        # Create fill-in-the-blank entries for June 2020 and July 2020
-        entries_label = QLabel("Fill-in-the-blank Entries:")
-        layout.addWidget(entries_label)
-
-        june_label = QLabel("June 2020:")
-        layout.addWidget(june_label)
-        june_entry = QLineEdit()
-        layout.addWidget(june_entry)
-
-        july_label = QLabel("July 2020:")
-        layout.addWidget(july_label)
-        july_entry = QLineEdit()
-        layout.addWidget(july_entry)
 
 
 if __name__ == "__main__":
