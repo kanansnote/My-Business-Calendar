@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtCore import QDate
-from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QCalendarWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QCalendarWidget, QDesktopWidget
 
 
 class MainWindow(QMainWindow):
@@ -30,6 +30,18 @@ class MainWindow(QMainWindow):
         calendar.setSelectedDate(min_date)
 
         layout.addWidget(calendar)
+
+        # Get the screen's geometry and calculate the center position
+        screen_geometry = QDesktopWidget().screenGeometry()
+        center_point = screen_geometry.center()
+
+        # Set the desired size of the main window
+        window_width = 800
+        window_height = 600
+        self.resize(window_width, window_height)
+
+        # Move the main window to the center position
+        self.move(center_point.x() - window_width // 2, center_point.y() - window_height // 2)
 
 
 if __name__ == "__main__":
