@@ -1,6 +1,7 @@
 import sys
-from PyQt5.QtCore import QDate
-from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QCalendarWidget, QDesktopWidget
+from PyQt5.QtCore import QDate, Qt
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QCalendarWidget, QDesktopWidget, QLabel
 
 
 class MainWindow(QMainWindow):
@@ -16,20 +17,42 @@ class MainWindow(QMainWindow):
         # Create a vertical layout for the central widget
         layout = QVBoxLayout(central_widget)
 
+        # Create a QLabel for June image and add it to the layout
+        self.june_image_label = QLabel()
+        june_pixmap = QPixmap("for_june_image.jpg").scaledToWidth(800)
+        self.june_image_label.setPixmap(june_pixmap)
+        self.june_image_label.setAlignment(Qt.AlignHCenter)
+        layout.addWidget(self.june_image_label)
+
         # Create a calendar widget and add it to the layout
-        calendar = QCalendarWidget()
-        calendar.setGridVisible(True)
+        self.calendar = QCalendarWidget()
+        self.calendar.setGridVisible(True)
 
         # Set the minimum and maximum dates to display only June 2020 and July 2020
         min_date = QDate(2020, 6, 1)
         max_date = QDate(2020, 7, 31)
-        calendar.setMinimumDate(min_date)
-        calendar.setMaximumDate(max_date)
+        self.calendar.setMinimumDate(min_date)
+        self.calendar.setMaximumDate(max_date)
 
         # Set the initial selected date to June 1, 2020
-        calendar.setSelectedDate(min_date)
+        self.calendar.setSelectedDate(min_date)
 
-        layout.addWidget(calendar)
+        # Connect the signal of month change to a slot
+        self.calendar.currentPageChanged.connect(self.updateBackgroundImage)
+
+        layout.addWidget(self.calendar)
+
+        # Create a QLabel for July image and add it to the layout
+        self.july_image_label = QLabel()
+        july_pixmap = QPixmap("for_july_image.jpg").scaledToWidth(800)
+        self.july_image_label.setPixmap(july_pixmap)
+        self.july_image_label.setAlignment(Qt.AlignHCenter)
+        self.july_image_label.hide()  # Initially hide the July image
+        layout.addWidget(self.july_image_label)
+
+        # Set the layout margins and spacing
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.setSpacing(0)
 
         # Get the screen's geometry and calculate the center position
         screen_geometry = QDesktopWidget().screenGeometry()
@@ -42,6 +65,14 @@ class MainWindow(QMainWindow):
 
         # Move the main window to the center position
         self.move(center_point.x() - window_width // 2, center_point.y() - window_height // 2)
+
+    def updateBackgroundImage(self, year, month):
+        if month == 7:  # July
+            self.june_image_label.hide()
+            self.july_image_label.show()
+        else:  # June
+            self.june_image_label.show()
+            self.july_image_label.hide()
 
 
 if __name__ == "__main__":
