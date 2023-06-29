@@ -22,9 +22,21 @@ class MainWindow(QMainWindow):
         june_pixmap = QPixmap("for_june_image.jpg").scaledToWidth(800)
         self.june_image_label.setPixmap(june_pixmap)
         self.june_image_label.setAlignment(Qt.AlignHCenter)
-        layout.addWidget(self.june_image_label)
 
-        # Create a calendar widget and add it to the layout
+        # Create a QLabel for July image and add it to the layout
+        self.july_image_label = QLabel()
+        july_pixmap = QPixmap("for_july_image.jpg").scaledToWidth(800)
+        self.july_image_label.setPixmap(july_pixmap)
+        self.july_image_label.setAlignment(Qt.AlignHCenter)
+        self.july_image_label.hide()  # Initially hide the July image
+
+        # Create a nested vertical layout for the images and calendar
+        nested_layout = QVBoxLayout()
+
+        nested_layout.addWidget(self.june_image_label)
+        nested_layout.addWidget(self.july_image_label)
+
+        # Create a calendar widget and add it to the nested layout
         self.calendar = QCalendarWidget()
         self.calendar.setGridVisible(True)
 
@@ -37,22 +49,17 @@ class MainWindow(QMainWindow):
         # Set the initial selected date to June 1, 2020
         self.calendar.setSelectedDate(min_date)
 
-        # Connect the signal of month change to a slot
-        self.calendar.currentPageChanged.connect(self.updateBackgroundImage)
+        nested_layout.addWidget(self.calendar)
 
-        layout.addWidget(self.calendar)
-
-        # Create a QLabel for July image and add it to the layout
-        self.july_image_label = QLabel()
-        july_pixmap = QPixmap("for_july_image.jpg").scaledToWidth(800)
-        self.july_image_label.setPixmap(july_pixmap)
-        self.july_image_label.setAlignment(Qt.AlignHCenter)
-        self.july_image_label.hide()  # Initially hide the July image
-        layout.addWidget(self.july_image_label)
+        # Add the nested layout to the main layout
+        layout.addLayout(nested_layout)
 
         # Set the layout margins and spacing
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(0)
+
+        # Connect the calendar's selectionChanged signal to a custom slot to handle image updates
+        self.calendar.selectionChanged.connect(self.updateDisplayedImage)
 
         # Get the screen's geometry and calculate the center position
         screen_geometry = QDesktopWidget().screenGeometry()
@@ -66,13 +73,14 @@ class MainWindow(QMainWindow):
         # Move the main window to the center position
         self.move(center_point.x() - window_width // 2, center_point.y() - window_height // 2)
 
-    def updateBackgroundImage(self, year, month):
-        if month == 7:  # July
-            self.june_image_label.hide()
-            self.july_image_label.show()
-        else:  # June
+    def updateDisplayedImage(self):
+        current_month = self.calendar.selectedDate().month()
+        if current_month == 6:
             self.june_image_label.show()
             self.july_image_label.hide()
+        elif current_month == 7:
+            self.june_image_label.hide()
+            self.july_image_label.show()
 
 
 if __name__ == "__main__":
