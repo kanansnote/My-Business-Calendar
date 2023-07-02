@@ -74,13 +74,13 @@ class MainWindow(QMainWindow):
         self.move(center_point.x() - window_width // 2, center_point.y() - window_height // 2)
 
     def updateDisplayedImage(self):
-        current_month = self.calendar.selectedDate().month()
-        if current_month == 6:
-            self.june_image_label.show()
-            self.july_image_label.hide()
-        elif current_month == 7:
+        selected_date = self.calendar.selectedDate()
+        if selected_date.month() == 7:
             self.june_image_label.hide()
             self.july_image_label.show()
+        else:
+            self.july_image_label.hide()
+            self.june_image_label.show()
 
 
 if __name__ == "__main__":
