@@ -30,12 +30,12 @@ My Business Calendar is a desktop application developed using PyQt5, designed to
 
 2. Clone the repository:
     ```
-    git clone https://github.com/your-username/business-calendar.git
+    git clone https://github.com/kanansnote/My-Business-Calendar.git
     ```
 
 3. Navigate to the project directory:
     ```
-    cd business-calendar
+    cd My-Business-Calendar
     ```
 
 4. Run the application:
