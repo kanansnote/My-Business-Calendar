@@ -1,6 +1,6 @@
-# Business Calendar
+# My Business Calendar
 
-Business Calendar is a PyQt5-based desktop application that displays images for the months of June and July 2020, along with a calendar widget. The application allows users to navigate between the two months and view corresponding images.
+My Business Calendar is a desktop application developed using PyQt5, designed to provide an immersive and personalized calendar experience by displaying images from the user's location.
 
 ## Features
 
@@ -45,7 +45,7 @@ Business Calendar is a PyQt5-based desktop application that displays images for 
 
 ## Background
 
-The concept for Business Calendar originated from my previous Upwork experience in creating two PowerPoint slides with a business calendar and fill-in-the-blank entries, following the client's specifications. The idea behind using location-specific images was to create a visually appealing experience for the user. By displaying images from the user's location, the calendar becomes more relatable and personalized.
+The concept for Business Calendar originated from my previous Upwork experience in creating two PowerPoint slides with a business calendar and fill-in-the-blank entries, following the client's specifications. The idea behind using location-specific images simply was to create a visually appealing experience for the user.
 
 Over the past two to three years, I have embarked on a software development journey, constantly seeking project ideas to expand my knowledge. It occurred to me that transforming the two PowerPoint slides into a simple program would not only serve as a learning opportunity but also provide practical value.
 
