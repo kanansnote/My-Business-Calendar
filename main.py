@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtCore import QDate, Qt
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtGui import QPixmap, QPalette
 from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QCalendarWidget, QDesktopWidget, QLabel
 
 
@@ -94,6 +94,10 @@ class MainWindow(QMainWindow):
         else:
             last_day_june = QDate(current_year, 6, 30)
             self.calendar.setSelectedDate(last_day_june)
+
+        pal = self.calendar.palette()
+        pal.setColor(QPalette.WindowText, pal.color(QPalette.Window))
+        self.calendar.setPalette(pal)
 
 
 if __name__ == "__main__":
