@@ -23,14 +23,14 @@ My Business Calendar is a desktop application developed using PyQt5, designed to
 
 ## Usage
 
-1. Install the required dependencies using `pip`:
-    ```
-    pip install pyqt5
-    ```
-
-2. Clone the repository:
+1. Clone the repository:
     ```
     git clone https://github.com/kanansnote/My-Business-Calendar.git
+    ```
+
+2. Install the required dependencies using `pip`:
+    ```
+    pip install pyqt5
     ```
 
 3. Navigate to the project directory:
