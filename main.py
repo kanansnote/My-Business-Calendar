@@ -59,10 +59,10 @@ class MainWindow(QMainWindow):
         layout.setSpacing(0)
 
         # Connect the calendar's selectionChanged signal to a custom slot to handle image updates
-        self.calendar.selectionChanged.connect(self.updateDisplayedImage)
+        self.calendar.selectionChanged.connect(self.update_displayed_image)
 
         # Connect the calendar's currentPageChanged signal to a custom slot
-        self.calendar.currentPageChanged.connect(self.handleMonthChange)
+        self.calendar.currentPageChanged.connect(self.handle_month_change)
 
         # Get the screen's geometry and calculate the center position
         screen_geometry = QDesktopWidget().screenGeometry()
@@ -76,7 +76,7 @@ class MainWindow(QMainWindow):
         # Move the main window to the center position
         self.move(center_point.x() - window_width // 2, center_point.y() - window_height // 2)
 
-    def updateDisplayedImage(self):
+    def update_displayed_image(self):
         selected_date = self.calendar.selectedDate()
         if selected_date.month() == 7:
             self.june_image_label.hide()
@@ -85,14 +85,14 @@ class MainWindow(QMainWindow):
             self.july_image_label.hide()
             self.june_image_label.show()
 
-    def handleMonthChange(self):
+    def handle_month_change(self):
         current_month = self.calendar.monthShown()
         current_year = self.calendar.yearShown()
         if current_month == 7:  # July
             first_day_july = QDate(current_year, 7, 1)
             self.calendar.setSelectedDate(first_day_july)
         else:
-            last_day_june = QDate(current_year, 6, 30)
+            last_day_june = QDate(current_year, 6, 1)
             self.calendar.setSelectedDate(last_day_june)
 
         pal = self.calendar.palette()
