@@ -92,8 +92,8 @@ class MainWindow(QMainWindow):
             first_day_july = QDate(current_year, 7, 1)
             self.calendar.setSelectedDate(first_day_july)
         else:
-            last_day_june = QDate(current_year, 6, 1)
-            self.calendar.setSelectedDate(last_day_june)
+            first_day_june = QDate(current_year, 6, 1)
+            self.calendar.setSelectedDate(first_day_june)
 
         pal = self.calendar.palette()
         pal.setColor(QPalette.WindowText, pal.color(QPalette.Window))
