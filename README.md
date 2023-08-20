@@ -10,10 +10,10 @@ My Business Calendar is a desktop application developed using PyQt5, designed to
 
 ## Images
 
-![June Image](./for_june_image.jpg)
+![June Image](media/for_june_image.jpg)
 *June Month's Image*
 
-![July Image](./for_july_image.jpg)
+![July Image](media/for_july_image.jpg)
 *July Month's Image*
 
 ## Requirements

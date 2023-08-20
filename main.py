@@ -19,13 +19,13 @@ class MainWindow(QMainWindow):
 
         # Create a QLabel for June image and add it to the layout
         self.june_image_label = QLabel()
-        june_pixmap = QPixmap("for_june_image.jpg").scaledToWidth(800)
+        june_pixmap = QPixmap("media/for_june_image.jpg").scaledToWidth(800)
         self.june_image_label.setPixmap(june_pixmap)
         self.june_image_label.setAlignment(Qt.AlignHCenter)
 
         # Create a QLabel for July image and add it to the layout
         self.july_image_label = QLabel()
-        july_pixmap = QPixmap("for_july_image.jpg").scaledToWidth(800)
+        july_pixmap = QPixmap("media/for_july_image.jpg").scaledToWidth(800)
         self.july_image_label.setPixmap(july_pixmap)
         self.july_image_label.setAlignment(Qt.AlignHCenter)
         self.july_image_label.hide()  # Initially hide the July image
