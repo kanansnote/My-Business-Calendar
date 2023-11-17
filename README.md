@@ -23,9 +23,9 @@ Business Calendar is a desktop application developed using PyQt5, designed to pr
 
 ## Usage
 
-1. Clone the repository:
+1. Clone the repository to your IDE:
     ```
-    git clone https://github.com/kanansnote/My-Business-Calendar.git
+    git clone https://github.com/kanansnote/Business-Calendar.git
     ```
 
 2. Install the required dependencies using `pip`:
@@ -33,12 +33,7 @@ Business Calendar is a desktop application developed using PyQt5, designed to pr
     pip install pyqt5
     ```
 
-3. Navigate to the project directory:
-    ```
-    cd Business-Calendar
-    ```
-
-4. Run the application:
+3. Run the application:
     ```
     python main.py
     ```
