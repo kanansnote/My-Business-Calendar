@@ -1,6 +1,6 @@
-# My Business Calendar
+# Business Calendar
 
-My Business Calendar is a desktop application developed using PyQt5, designed to provide an immersive and personalized calendar experience by displaying images from the user's location.
+Business Calendar is a desktop application developed using PyQt5, designed to provide an immersive and personalized calendar experience by displaying images from the user's location.
 
 ## Features
 
@@ -35,7 +35,7 @@ My Business Calendar is a desktop application developed using PyQt5, designed to
 
 3. Navigate to the project directory:
     ```
-    cd My-Business-Calendar
+    cd Business-Calendar
     ```
 
 4. Run the application:
