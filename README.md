@@ -40,9 +40,11 @@ Business Calendar is a desktop application developed using PyQt5, designed to pr
 
 ## Background
 
-The concept for Business Calendar originated from my previous Upwork experience in creating two PowerPoint slides with a business calendar and fill-in-the-blank entries, following the client's specifications. The idea behind using location-specific images simply was to create a visually appealing experience for the user.
+The concept for Business Calendar originated from my previous Upwork experience in creating two PowerPoint slides with 
+a business calendar and fill-in-the-blank entries, following the client's specifications. The idea behind using location-specific images simply was to create a visually appealing experience for the user.
 
-Over the past two to three years, I have embarked on a software development journey, constantly seeking project ideas to expand my knowledge. It occurred to me that transforming the two PowerPoint slides into a simple program would not only serve as a learning opportunity but also provide practical value.
+Over the past two to three years, I have embarked on a software development journey, constantly seeking project ideas to expand my knowledge. 
+It occurred to me that transforming the two PowerPoint slides into a simple program would not only serve as a learning opportunity but also provide practical value.
 
 ## License
 
