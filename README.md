@@ -1,21 +1,20 @@
 # Business Calendar
 
-Business Calendar is a desktop application developed using PyQt5, designed to provide an immersive 
-and personalized calendar experience by displaying images from the user's location.
+**Business Calendar** is a small GUI application designed to offer a personalized calendar experience by displaying images based on the user's location.
 
 ## Features
 
 - Displays an image for the month of June by default.
-- Automatically switches to the image for the month of July when the selected date is within the month of July.
-- The calendar widget highlights the selected date and shows a grid for better visualization.
+- Switches to the image for July when the selected date falls within that month by clicking the arrows.
+- The calendar widget highlights the selected date and displays a grid for better visualization.
 
 ## Images
 
-![June Image](media/for_june_image.jpg)
 *June Month's Image*
+![June Image](./media/for_june_image.jpg)
 
-![July Image](media/for_july_image.jpg)
 *July Month's Image*
+![July Image](./media/for_july_image.jpg)
 
 ## Requirements
 
@@ -25,30 +24,22 @@ and personalized calendar experience by displaying images from the user's locati
 ## Usage
 
 1. Clone the repository to your IDE:
-    ```
-    git clone https://github.com/kanansnote/Business-Calendar.git
-    ```
+
+    `git clone https://github.com/kanansnote/Business-Calendar.git`
 
 2. Install the required dependencies using `pip`:
-    ```
-    pip install pyqt5
-    ```
+
+    `pip install pyqt5`
 
 3. Run the application:
-    ```
-    python main.py
-    ```
+
+    `python main.py`
 
 ## Background
 
-The concept for Business Calendar originated from my previous Upwork experience in creating two PowerPoint slides with 
-a business calendar and fill-in-the-blank entries, following the client's specifications. 
-The idea behind using location-specific images simply was to create a visually appealing experience for the user.
+The concept for this small project originated from my previous experience on Upwork, where I created two PowerPoint slides featuring a business calendar and fill-in-the-blank entries according to the client's specifications. The idea of using location-specific images was to create a visually appealing experience for the user.
 
-Over the past two to three years, I have embarked on a software development journey, constantly seeking project ideas 
-to expand my knowledge. 
-It occurred to me that transforming the two PowerPoint slides into a simple program would not only serve as 
-a learning opportunity but also provide practical value.
+Over the past two to three years, I have embarked on a programming journey, constantly seeking project ideas to expand my knowledge. I realized that transforming those two PowerPoint slides into a simple program would not only serve as a valuable learning opportunity but also provide practical benefits.
 
 ## License
 
